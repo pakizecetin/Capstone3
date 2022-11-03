@@ -27,7 +27,7 @@ V17 = st.sidebar.slider(label="V17", min_value=-35,
 V14 = st.sidebar.slider(label="V14", min_value=-25, max_value=15, step=1)
 V10 = st.sidebar.slider(label="V10", min_value=-30, max_value=30, step=1)
 V12 = st.sidebar.slider(label="V12", min_value=-25,
-                        max_value=15, step=0.1)
+                        max_value=15, step=1)
 V27 = st.sidebar.slider(label="V27", min_value=-25,
                         max_value=35, step=1)
 V7 = st.sidebar.slider(label="V7", min_value=-45, max_value=125, step=1)
