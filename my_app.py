@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import sklearn
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from PIL import Image
 import base64
 from sklearn.compose import make_column_transformer
@@ -11,7 +11,7 @@ from sklearn.preprocessing import OrdinalEncoder
 st.image("churn.png", use_column_width=True)
 html_temp = """
 <div style="background-color:blue;padding:10px">
-<h2 style="color:white;text-align:center;">Employee Churn Prediction </h2>
+<h2 style="color:white;text-align:center;">Fraud Detection </h2>
 </div>"""
 st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 html_temp = """
@@ -28,7 +28,7 @@ number_project = st.sidebar.slider(label="number_project", min_value=0, max_valu
 last_evaluation = st.sidebar.slider(label="Last Evaluation", min_value=0.0, max_value=1.0, step=0.01)
 average_monthly_hours = st.sidebar.slider(label="average_monthly_hours", min_value=0, max_value=350, step=10)
 
-capstone_2_model = pickle.load(open('xgb_model_final', 'rb'))
+capstone_3_model = pickle.load(open('xgb_model_final', 'rb'))
 
 scalerfile = 'scaler.sav'
 scaler = pickle.load(open(scalerfile, 'rb'))
@@ -46,7 +46,7 @@ user_inputs = df
 
 user_inputs_transformed = scaler.transform(user_inputs)
 
-prediction = capstone_2_model.predict(user_inputs_transformed)
+prediction = capstone_3_model.predict(user_inputs_transformed)
 
 
 st.header("The inputs are below")
@@ -57,8 +57,8 @@ st.subheader('Click PREDICT if configuration is OK')
 if st.button('PREDICT'):
 	if prediction[0]==0:
 		st.success(prediction[0])
-		st.success(f'Employee will STAY :)')
+		st.success(f'This transaction is not fraudulent. :)')
 	elif prediction[0]==1:
 		st.warning(prediction[0])
-		st.warning(f'Employee will LEAVE :(')
+		st.warning(f'This transaction is fraudulent. :(')
     
