@@ -37,8 +37,7 @@ V2 = st.sidebar.slider(label="V2",
 
 capstone_3_model = pickle.load(open('xgb_model_final', 'rb'))
 
-scalerfile = 'scaler.sav'
-scaler = pickle.load(open(scalerfile, 'rb'))
+
 
 my_dict = {'V17':V17, 
 	   'V14':V14, 
