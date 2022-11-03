@@ -47,8 +47,7 @@ user_inputs = df
 prediction = capstone_3_model.predict(user_inputs)
 
 
-st.header("The inputs are below")
-st.table(df)
+
 
 st.subheader('Click PREDICT if configuration is OK')
 
