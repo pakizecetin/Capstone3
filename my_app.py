@@ -54,8 +54,8 @@ st.subheader('Click PREDICT if configuration is OK')
 if st.button('PREDICT'):
 	if prediction[0]==0:
 		st.success(prediction[0])
-		st.success(f'This transaction is not fraudulent. :)')
+		st.success(f'This transaction is not fraudulent.')
 	elif prediction[0]==1:
 		st.warning(prediction[0])
-		st.warning(f'This transaction is fraudulent. :(')
+		st.warning(f'This transaction is fraudulent.')
     
