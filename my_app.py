@@ -23,7 +23,7 @@ st.markdown(html_temp,unsafe_allow_html=True)
 
 
 V17 = st.sidebar.slider(label="V17", min_value=-35,
-                        max_value=15, step=0.01)
+                        max_value=15, step=1)
 V14 = st.sidebar.slider(label="V14", min_value=-25, max_value=15, step=1)
 V10 = st.sidebar.slider(label="V10", min_value=-30, max_value=30, step=1)
 V12 = st.sidebar.slider(label="V12", min_value=-25,
