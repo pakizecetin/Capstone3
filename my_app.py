@@ -16,7 +16,7 @@ html_temp = """
 st.sidebar.markdown(html_temp,unsafe_allow_html=True)
 html_temp = """
 <div style="background-color:tomato;padding:10px">
-<h2 style="color:white;text-align:center;">Streamlit ML Cloud App </h2>
+<h2 style="color:white;text-align:center;">Fraud Detection </h2>
 </div>"""
 st.sidebar.image("fraud.png", use_column_width=True)
 st.markdown(html_temp,unsafe_allow_html=True)
